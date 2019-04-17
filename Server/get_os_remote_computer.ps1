@@ -1,0 +1,1 @@
+Get-WmiObject Win32_OperatingSystem -ComputerName "PMB3" | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL

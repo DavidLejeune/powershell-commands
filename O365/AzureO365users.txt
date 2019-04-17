@@ -1,0 +1,85 @@
+Install-Module -Name AzureAD
+Connect-AzureAD
+Get-AzureADUser
+# Get-AzureADUser -ObjectID <sign-in name of the user account>
+# Get-AzureADUser -ObjectID BelindaN@litwareinc.onmicosoft.com
+Get-AzureADUser -ObjectID l.debaets@accdb.be | Select-Object *
+Get-AzureADUser | Where-Object {$_.UsageLocation -eq $Null}
+Get-AzureADUser | Select-Object DisplayName,UserPrincipalName,AccountEnabled | Where-Object {$_.AccountEnabled -eq $True}
+
+Set-ExecutionPolicy RemoteSigned
+$password_debaets= "!Pinkie001!!!" | ConvertTo-SecureString -AsPlainText -Force
+$username_debaets = "O365AdminDebaets@accdb.onmicrosoft.com"
+$credential_debaets = New-Object System.Management.Automation.PSCredential($username_debaets,$password_debaets)
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential_debaets -Authentication Basic -AllowRedirection
+Import-PSSession $Session -DisableNameChecking
+Get-Mailbox
+
+---------------------------------------------------
+# Create an object to hold the results
+$addresses = @()
+# Get every mailbox in the Exchange Organisation
+$Mailboxes = Get-Mailbox -ResultSize Unlimited
+ 
+# Recurse through the mailboxes
+ForEach ($mbx in $Mailboxes) {
+    # Recurse through every address assigned to the mailbox
+    Foreach ($address in $mbx.EmailAddresses) {
+        # If it starts with "SMTP:" then it's an email address. Record it
+        if ($address.ToString().ToLower().StartsWith("smtp:")) {
+            # This is an email address. Add it to the list
+            $obj = "" | Select-Object Alias,EmailAddress
+            $obj.Alias = $mbx.Alias
+            $obj.EmailAddress = $address.ToString().SubString(5)
+            $addresses += $obj
+        }
+    }
+}
+# Export the final object to a csv in the working directory
+$addresses | Export-Csv addresses.csv -NoTypeInformation
+------------------------------------
+
+
+Get-Mailbox -resultsize unlimited | Select-Object displayname -expandproperty emailaddresses| Where-Object {$_.smtpaddress -like "**"}| Select-Object displayName,SmtpAddress  | Export-csv C:\domain.csv -nti
+
+
+Get-Recipient -RecipientType usermailbox -SortBy LastName -resultsize Unlimited | Select Name, DisplayName, FirstName, LastName, samaccountname, primarysmtpaddress -ExpandProperty EmailAddresses | select Name,DisplayName, FirstName, LastName,samaccountname,smtpaddress
+
+ Get-Mailbox -ResultSize Unlimited |Select-Object DisplayName,PrimarySmtpAddress, @{Name=“EmailAddresses”;Expression={$_.EmailAddresses |Where-Object {$_.PrefixString -ceq “smtp”} | ForEach-Object {$_.SmtpAd
+dress}}}
+
+
+
+ Get-Recipient | Select Name -ExpandProperty EmailAddresses
+
+
+
+Get-Mailbox -ResultSize Unlimited | Select-Object DisplayName,ServerName,PrimarySmtpAddress, @{Name=“EmailAddresses”;Expression={$_.EmailAddresses | Where-Object {$_ -clike “smtp*”}}}
+Remove-PSSession $Session
+
+
+Set-ExecutionPolicy RemoteSigned
+$password_debaets= "L3kk3rWijntje!" | ConvertTo-SecureString -AsPlainText -Force
+$username_debaets = "rovacon@rouseu.be"
+$credential_debaets = New-Object System.Management.Automation.PSCredential($username_debaets,$password_debaets)
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential_debaets -Authentication Basic -AllowRedirection
+Import-PSSession $Session -DisableNameChecking
+Get-Mailbox -ResultSize Unlimited | Select-Object DisplayName,PrimarySmtpAddress, @{Name=“Aliasses”;Expression={$_.EmailAddresses | Where-Object {$_ -clike “smtp*”}}}
+Remove-PSSession $Session
+
+Get-Contact -ResultSize Unlimited | Select-Object DisplayName,PrimarySmtpAddress, @{Name=“Aliasses”;Expression={$_.EmailAddresses | Where-Object {$_ -clike “smtp*”}}}
+
+ Get-Recipient -ResultSize Unlimited | Select-Object DisplayName, RecipientType,PrimarySmtpAddress, @{Name=“Aliasses”;Expression={$_.EmailAddresses | Where-Object {$_ -clike “smtp*”}}}
+
+
+
+
+
+Set-ExecutionPolicy RemoteSigned
+$password_client= "xZy3sDla3OWQP3eD" | ConvertTo-SecureString -AsPlainText -Force
+$username_client = "o365admin@ordederapothekers.onmicrosoft.com"
+$credential_client = New-Object System.Management.Automation.PSCredential($username_client,$password_client)
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential_client -Authentication Basic -AllowRedirection
+Import-PSSession $Session -DisableNameChecking
+Get-Recipient -ResultSize Unlimited | Select-Object DisplayName, RecipientType,PrimarySmtpAddress, @{Name=“Aliasses”;Expression={$_.EmailAddresses | Where-Object {$_ -clike “smtp*”}}}
+Remove-PSSession $Session

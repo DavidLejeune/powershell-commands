@@ -1,0 +1,1 @@
+dsquery * -filter "(&(objectCategory=person)(objectClass=user)(!userAccountControl:1.2.840.113556.1.4.803:=2))" -attr sAMAccountName name title department mail -limit 0 > users.txt

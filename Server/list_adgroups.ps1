@@ -1,0 +1,1 @@
+Get-ADGroup -filter * -properties * -searchbase "OU=Test,DC=Contoso,DC=Com"|select SAMAccountName, Description|Export-Csv -Path c:\temp\ADGroupList.csv

@@ -1,0 +1,1 @@
+gci -r|sort -descending -property length | select -first 50 name, directory,  @{Name="Megabytes";Expression={[Math]::round($_.length / 1MB, 2)}}

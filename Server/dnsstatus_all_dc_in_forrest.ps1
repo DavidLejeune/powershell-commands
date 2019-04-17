@@ -1,0 +1,1 @@
+DCDIAG /TEST:DNS /s:DC01 /V /E /F:outputfile.txt
