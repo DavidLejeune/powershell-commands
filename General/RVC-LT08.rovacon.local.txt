@@ -1,0 +1,19 @@
+FQDN : RVC-LT08.ROVACON.LOCAL
+FQDN : RVC-LT08.ROVACON.LOCAL
+FQDN : RVC-LT08.rovacon.local
+IP : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.ip
+Hostname : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.hostname
+City : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.city
+Region : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.region
+Country : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.country
+Location : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.loc
+Org : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.org
+FQDN : RVC-LT08.ROVACON.LOCAL
+FQDN : RVC-LT08.rovacon.local
+IP : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.ip
+Hostname : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.hostname
+City : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.city
+Region : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.region
+Country : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.country
+Location : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.loc
+Org : @{ip=81.83.31.64; city=Herzele; region=Flanders; country=BE; loc=50.8833,3.8833; hostname=d51531f40.static.telenet.be; postal=9550; org=AS6848 Telenet BVBA}.org
